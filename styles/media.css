@@ -1,0 +1,229 @@
+/* Стили для больших экранов (дисплей максимум 1199 пикселей) */
+@media screen and (max-width: 1200px) {
+    .about-us__wrap {
+        justify-content: space-evenly;
+    }
+
+    .all-services__header {
+        justify-content: space-evenly;
+    }
+
+    .all-services__wrap {
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+    }
+
+    .all-services__items {
+        margin-right: 0;
+        width: 50%;
+        text-align: center;
+        margin-bottom: 1.25rem;
+    }
+
+    .all-services__items:nth-last-child(1) {
+        margin-bottom: 0;
+    }
+
+    .all-projects__img_wrap {
+       justify-content: space-evenly;
+       align-items: center;
+       align-content: center;
+       width: 100%;
+    }
+
+    .all-projects__img {
+        margin-bottom: 1.25rem;
+        max-width: 100%;
+        width: 45%;
+    }
+
+    .all-projects__img:nth-last-child(1) {
+        margin-bottom: 0;
+    }
+
+    .video__movie {
+        width: 100%;
+    }
+
+    .footer__items_wrap {
+        justify-content: space-evenly;
+    }
+}
+
+/* Стили для средних экранов (дисплей максимум 991 пикселей) */
+@media screen and (max-width: 992px) {
+    html, body {
+        font-size: 85%;
+    }
+
+    .about-us__text {
+        padding: 0 0.9375rem;
+    }
+
+    .services__footer-items {
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+    }
+
+    .services__item {
+        margin-bottom: 1.875rem;
+    }
+
+    .services__item:nth-last-child(1) {
+        margin-bottom: 0;
+    }
+}
+
+/* Стили для маленьких экранов (дисплей максимум 767 пикселей) */
+@media screen and (max-width: 768px) {
+    html, body {
+        font-size: 75%;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .about-us__img {
+        display: none;
+    }
+
+    .about-us__wrap {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .all-services__header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .all-services__header_title {
+        margin-bottom: 1.25rem;
+    }
+
+    .all-projects__img_wrap {
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+     }
+ 
+     .all-projects__img {
+        margin-bottom: 1.25rem;
+        max-width: 100%;
+        width: 40%;
+     }
+
+     .footer__items_wrap {
+        justify-content: space-evenly;
+    }
+
+    .footer__items {
+        text-align: center;
+        margin-bottom: 1.25rem;
+        width: 50%;
+    }
+
+    .footer__items:nth-last-child(1) {
+        margin-bottom: 0;
+    }
+
+    .button {
+        display: none;
+    }
+
+}
+
+/* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
+@media screen and (max-width: 576px) {
+    html, body {
+        font-size: 65%;
+    }
+
+    .about-us__text_p {
+        padding: 0 0.9375rem;
+    }
+
+    .about-us__number {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .about-us__number__items {
+        margin-bottom: 1.25rem;
+        text-align: center;
+    }
+
+    .about-us__number__items:nth-last-child(1) {
+        margin-bottom: 0;
+    }
+
+    .all-services__header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .all-services__items_img {
+        width: 100%;
+    }
+
+    .all-services__wrap {
+        margin-top: 1.875rem;
+    }
+
+    .all-services__header_title {
+        margin-bottom: 1.25rem;
+    }
+
+    .all-projects__img_wrap {
+        width: 100%;
+     }
+ 
+     .all-projects__img {
+        margin-bottom: 1.25rem;
+        max-width: 100%;
+        width: 70%;
+     }
+
+    .subscribe__form {
+        flex-direction: column;
+    }
+
+    .subscribe__form_email {
+        margin-bottom: 1.25rem;
+        border-radius: 1.875rem;
+    }
+
+    .subscribe__form_btn {
+        border-radius: 1.875rem;
+    }
+
+    .video__title {
+        text-align: center;
+    }
+
+    .subscribe__form_text {
+        text-align: center;
+    }
+
+    .subscribe__form_text_sm {
+        text-align: center;
+    }
+
+    .footer__items {
+        width: 100%;
+    }
+}

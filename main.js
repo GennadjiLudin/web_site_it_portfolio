@@ -1,23 +1,19 @@
 //Change fixed menu
 var nav = document.getElementById('nav');
 var sections = document.querySelectorAll('.section-scroll');
-var scrollPageY = window.pageYOffset + 'px';
 
 window.addEventListener('scroll', scrollHandler);
 
 function scrollHandler() {
-    var scrollPageY = window.pageYOffset + 'px';
     chageMenu();
     currentMenuFunc();
-    // currentMenuFunc2();
-
 }
 
 function chageMenu() {
-    if(!elemInViewport(sections[0])){
+    if(!elemInViewport(sections[0]) && screen.width >= 768){
         nav.classList.add('nav_back');
         button.classList.add('button__show');
-    } else if(elemInViewport(sections[0])) {
+    } else {
         nav.classList.remove('nav_back');
         button.classList.remove('button__show');
     }
@@ -39,20 +35,7 @@ function elemInViewport(elem,full) {
 
 //Current menu
 var currentMenu = document.querySelectorAll('.menu__item');
-var currentMenuLink = document.querySelectorAll('.menu__link');
-var currentSection = document.querySelectorAll('.sections-menu');
-
-
-// function currentMenuFunc2() {
-//     var prevSection;
-//     clearMenuClasses();
-//     for(var i = 0; i < currentSection.length; i++){
-//         if(elemInViewport(currentMenu2[i])){
-//             currentMenu[i].classList.add('menu__item_current');
-//         }
-//         prevSection = currentMenu[i];
-//     }
-// }
+// var currentMenuLink = document.querySelectorAll('.menu__link');
 
 function currentMenuFunc() {
     if(!elemInViewport(sections[0]) && elemInViewport(sections[1]) || elemInViewport(sections[2])){
@@ -64,7 +47,7 @@ function currentMenuFunc() {
     } else if(elemInViewport(sections[4]) || elemInViewport(sections[5])){
         clearMenuClasses();
         currentMenu[2].classList.add('menu__item_current');
-    } else if(elemInViewport(sections[6])){
+    } else if(elemInViewport(sections[6]) || elemInViewport(sections[7])){
         clearMenuClasses();
         currentMenu[3].classList.add('menu__item_current');  
     } else {
@@ -80,13 +63,8 @@ function clearMenuClasses() {
 
 //Burger menu
 var burgerMenuBtn = document.getElementById('burger-menu_btn');
-var burgerMenuNav = document.getElementById('burger-menu__nav');
 var burgerFlag = false;
-burgerMenuBtn.addEventListener('click', clickHandler);
-
-function clickHandler() {
-    checkBurgerFlag();
-}
+burgerMenuBtn.addEventListener('click', checkBurgerFlag);
 
 function checkBurgerFlag() {
     event.preventDefault();
@@ -98,13 +76,13 @@ function checkBurgerFlag() {
 }
 
 function showBurgerMenu() {
-    burgerMenuNav.classList.add('burger-menu__nav_active');
+    menuFixed.classList.add('menu_active');
     burgerMenuBtn.classList.add('burger-menu_btn_active');
     burgerFlag = true;
 }
 
 function hideBurgerMenu() {
-    burgerMenuNav.classList.remove('burger-menu__nav_active');
+    menuFixed.classList.remove('menu_active');
     burgerMenuBtn.classList.remove('burger-menu_btn_active');
     burgerFlag = false;
 }
@@ -160,6 +138,7 @@ function buttonUp() {
 
 // ScrollMenu
 const menuFixed = document.getElementById('menu_fixed');
+var currentSection = document.querySelectorAll('.sections-menu');
 
 function scrollToLinks(elem) {
     var elemCoord = elem.getBoundingClientRect();
@@ -177,39 +156,9 @@ function scrollToSection() {
     if(event.target.id == "menu_fixed")
     return;
 
-    for(var i = 0; i < currentMenuLink.length; i++) {
+    for(var i = 0; i < currentMenu.length; i++) {
         if(event.target.getAttribute('href').substr(1) === currentSection[i].id) {
-            console.log(currentSection[i]);
             scrollToLinks(currentSection[i]);
-            return;
-        }
-    }
-}
-
-// Scroll Burger menu
-const burgerMenuFixed = document.getElementById('burger-menu__nav');
-var currentBurgerMenuLink = document.querySelectorAll('.burger-menu__nav_link')
-var currentSectionBurgerMenu = document.querySelectorAll('.section-burger-menu');
-
-function scrollToLinks(elem) {
-    var elemCoord = elem.getBoundingClientRect();
-    window.scrollTo({
-        top: elemCoord.top + pageYOffset,
-        behavior: "smooth"
-    });
-}
-
-burgerMenuFixed.addEventListener('click', scrollToSection);
-
-function scrollToSection() {
-    event.preventDefault();
-
-    if(event.target.id == "burger-menu__nav")
-    return;
-
-    for(var i = 0; i < currentBurgerMenuLink.length; i++) {
-        if(event.target.getAttribute('href').substr(1) === currentSectionBurgerMenu[i].id) {
-            scrollToLinks(currentSectionBurgerMenu[i]);
             return;
         }
     }

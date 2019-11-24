@@ -35,7 +35,6 @@ function elemInViewport(elem,full) {
 
 //Current menu
 var currentMenu = document.querySelectorAll('.menu__item');
-// var currentMenuLink = document.querySelectorAll('.menu__link');
 
 function currentMenuFunc() {
     if(!elemInViewport(sections[0]) && elemInViewport(sections[1]) || elemInViewport(sections[2])){
@@ -91,7 +90,7 @@ function hideBurgerMenu() {
 //All projects functions
 var projectsImg = document.querySelectorAll('.all-projects__img');
 var projectsBtn = document.getElementById('all-projects__btn');
-var CONSTANTA = 4;
+const CONSTANTA = 4;
 var flag = false;
 
 hideProjects();

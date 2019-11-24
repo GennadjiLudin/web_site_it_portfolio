@@ -454,6 +454,7 @@ h1, h2, h3, h4, h5 ,h6 {
 .all-projects__img {
     width: 22%;  
     margin-top: 1.25rem;  
+    transition: all 0.4s ease;
 }
 .all-projects__img:nth-child(1),
  .all-projects__img:nth-child(2), 
